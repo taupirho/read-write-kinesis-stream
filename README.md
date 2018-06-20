@@ -1,4 +1,5 @@
 # read-write-kinesis-stream
+
 A small example of reading and writing  an AWS kinesis stream with python lambdas
 
 For this we need 3 things:
@@ -17,5 +18,7 @@ and I have put plenty of comments in so won't discuss them further here. The onl
 by an event. They are stand-alone and can be run manually as and when required. In the real world the stream reading lambda in particular would 
 probably be triggered by a kinesis stream event. The only other thing to worry about is that the lambdas obviously need permission to read
 and write to kinesis. I took the easy option and extended the default lambda-execution-role to allow all access to kinesis but again in
-a production system you would want to nail this down to very specific permissions
+a production system you would want to nail this down to very specific permissions.
+
+At some point soon I will extend this example to read the stream using kinesis fire-hose and use it write the records to S3
 

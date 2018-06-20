@@ -15,8 +15,8 @@ and the faster it can process it.
 
 After the stream was created it was just a matter of creating two python lambdas to read and write to it. Both lambdas are quite short
 and I have put plenty of comments in so won't discuss them further here. A slightly unusual feature is that neither lambda is triggered 
-by an event. They are stand-alone and can be run manually as and when required or more likely as part of an AWS Step function process.(see 
-my article on using step functions [here](https://github.com/taupirho/using-aws-step).
+by an event - although they can be. They are stand-alone and can be run manually as and when required or more likely as 
+part of an AWS Step function process (see my article on using step functions [here](https://github.com/taupirho/using-aws-step).
 The only other thing to note is that the lambdas obviously need permission to read
 and write to kinesis. I took the easy option and extended the default lambda-execution-role to allow all access to kinesis but again in
 a production system you would want to nail this down to very specific permissions.

@@ -12,9 +12,9 @@ stream from the aws console. As this is just a very small demo I chose to set it
 you can think of a shard as a unit of processing potential. The more shards a stream has the more data it can read and write
 and the faster it can process it. 
 
-After the stream was created it was just a matter of creating two python lambdas to read and write to it. I have put plenty of 
-comments in both programs so won't discuss them further here. The only slightly unusual thing is that neither lambda is triggered by
-an event. They are stand-alone and can be run manually as and when required. In the real world the stream reading lambda would 
+After the stream was created it was just a matter of creating two python lambdas to read and write to it. Both lambdas are quite short
+and I have put plenty of comments in so won't discuss them further here. The only slightly unusual thing is that neither lambda is triggered 
+by an event. They are stand-alone and can be run manually as and when required. In the real world the stream reading lambda in particular would 
 probably be triggered by a kinesis stream event. The only other thing to worry about is that the lambdas obviously need permission to read
 and write to kinesis. I took the easy option and extended the default lambda-execution-role to allow all access to kinesis but again in
 a production system you would want to nail this down to very specific permissions

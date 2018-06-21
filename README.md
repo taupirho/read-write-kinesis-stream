@@ -23,7 +23,8 @@ that were malformed for example could be sent to a SNS topic or SQS queue for fu
 
 The only other thing to note is that the lambdas obviously need permission to read and write to kinesis. I took the 
 easy option and extended the default lambda-execution-role to allow all access to kinesis but again in a production system you would want 
-to nail this down to very specific permissions.
+to nail this down to very specific permissions. Also remember to include SQS and/or SNS read/write permissions for error processing 
+in production.
 
 At some point soon I will extend this example to read the stream using kinesis fire-hose and use it write the records to S3
 

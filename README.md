@@ -17,7 +17,11 @@ After the stream was created it was just a matter of creating two python lambdas
 and I have put plenty of comments in so won't discuss them further here. A slightly unusual feature is that neither lambda is triggered 
 by an event - although they can and usually will be. They are stand-alone and can be run manually as and when required or more likely as 
 part of an AWS Step function process __(see my article on using step functions [here](https://github.com/taupirho/using-aws-step))__.
- The only other thing to note is that the lambdas obviously need permission to read and write to kinesis. I took the 
+
+I haven't included any error/retry processing in my examples but in production you obviously would. Any read/write payloads
+that were malformed for example could be sent to a SNS topic or SQS queue for futher investigation and/or processing.
+
+The only other thing to note is that the lambdas obviously need permission to read and write to kinesis. I took the 
 easy option and extended the default lambda-execution-role to allow all access to kinesis but again in a production system you would want 
 to nail this down to very specific permissions.
 
